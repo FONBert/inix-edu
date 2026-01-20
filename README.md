@@ -12,4 +12,4 @@ L'application sert de véritable outil décisionnel pour les directeurs d'établ
 
 Inix-Edu transforme ainsi la gestion scolaire d'une tâche administrative fastidieuse en un processus stratégique, favorisant à la fois l'efficacité opérationnelle et l'amélioration continue des résultats éducatifs. Le système s'inscrit dans la modernisation numérique du secteur éducatif tout en préservant les exigences académiques et administratives traditionnelles.
 
-resume en 300 mots maximum
+By Inix-Team
