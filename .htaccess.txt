@@ -1,0 +1,38 @@
+php_flag display_errors on
+php_value error_reporting 32767
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Correction 1: Base correcte pour les réécritures
+    RewriteBase /Edu/public/
+    
+    # Correction 2: Redirection de /Edu/public/ vers index.php
+    RewriteRule ^$ index.php [L]
+    
+    # Correction 3: Autoriser l'accès aux fichiers réels
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Correction 4: Réécriture propre des URLs
+    RewriteRule ^saisir-notes$ saisir_notes.php [NC,L]
+    
+    # Correction 5: Gestion des autres requêtes
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+    
+    # Bloquer l'accès à logout.php dans /admin/
+    
+    <Files "logout.php">
+         Deny from all
+    </Files>
+
+    <Files "generate_prof_id.php">
+    Require all granted
+</Files>
+
+<FilesMatch "^.*$">
+    Require all denied
+</FilesMatch>
+
+</IfModule>
+
